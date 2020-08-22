@@ -32,6 +32,7 @@
 | sipping_origin_id | integer    | null: false                    |
 | sipping_date_id   | integer    | null: false                    |
 | price             | integer    | null: false                    |
+| user              | integer    | null: false, foreign_key: true |
 
 ### Association
 
@@ -51,6 +52,7 @@
 
 - belongs_to :user
 - belongs_to :item
+- has_one :purchaser
 
 ## purchasers テーブル
 
@@ -65,8 +67,7 @@
 
 ### Association
 
-- belongs_to :user
-- belongs_to :item
+- belongs_to :user-item
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
