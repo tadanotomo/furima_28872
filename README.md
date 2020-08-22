@@ -32,7 +32,7 @@
 | sipping_origin_id | integer    | null: false                    |
 | sipping_date_id   | integer    | null: false                    |
 | price             | integer    | null: false                    |
-| user              | integer    | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -62,7 +62,7 @@
 | prefecture_id   | integer | null: false |
 | city            | string  | null: false |
 | address         | string  | null: false |
-| building_name   | string  | null: false |
+| building_name   | string  |             |
 | phone_number    | string  | null: false |
 
 ### Association
