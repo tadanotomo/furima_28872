@@ -17,6 +17,7 @@
 ### Association
 
 - has_many :items
+- has_many :user_items
 - has_one :purchaser
 
 ## items テーブル
@@ -31,14 +32,25 @@
 | sipping_origin_id | integer    | null: false                    |
 | sipping_date_id   | integer    | null: false                    |
 | price             | integer    | null: false                    |
-| user              | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
+- has_many :user_items
 - has_one :purchaser
 - has_one_attached :image
 
+## user_items テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :item
 
 ## purchasers テーブル
 
